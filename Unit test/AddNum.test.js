@@ -17,3 +17,22 @@ it("should return sum of array!!!", () => {
 
   expect(resSum).toBe(expectedRes);
 });
+
+it("should return sum of array , even if provide array of strings!!!", () => {
+  const numData = ["1", "3", "4"];
+
+  const expectedRes = numData.reduce((acc, curr) => +acc + +curr, 0);
+
+  const resSum = addNum(numData);
+
+  expect(resSum).toBe(expectedRes);
+});
+
+// ! for error
+it("should throw an error if no argument is passed !!!", () => {
+  try {
+    const res = addNum();
+  } catch (error) {
+    expect(error).toBeDefined();
+  }
+});
