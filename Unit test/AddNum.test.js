@@ -36,3 +36,20 @@ it("should throw an error if no argument is passed !!!", () => {
     expect(error).toBeDefined();
   }
 });
+
+// ! for error , recommended
+it("should throw an error if no argument is passed !!!", () => {
+  const resultFn = () => {
+    addNum();
+  };
+
+  expect(resultFn).toThrow();
+});
+
+it("should throw an error if iterable is not given !!!", () => {
+  const resultFn = () => {
+    addNum(1, 2, 3, 4);
+  };
+
+  expect(resultFn).toThrow(/is not iterable/i);
+});
